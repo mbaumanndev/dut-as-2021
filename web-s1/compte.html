@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Restaurant</title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" title="Aller à l'accueil">Accueil</a>
+        <a href="index_en.html" title="Home" hreflang="en" lang="en">Home</a>
+        <a href="la_carte.html">La carte</a>
+        <a href="commande.html" title="Passer commande">
+            Commander
+        </a>
+        <a href="a_propos.html" title="À propos">À propos</a>
+    </nav>
+    <main>
+        <form action="compte.html" enctype="multipart/form-data" method="post">
+            <fieldset>
+                <legend>Informations requises</legend>
+                <div>
+                    <label for="le_nom">Votre nom</label>
+                    <input type="text" required id="le_nom" name="nom"
+                        placeholder="Dupont" />
+                </div>
+                <div>
+                    <label for="le_prenom">Votre prénom</label>
+                    <input type="text" required id="le_prenom" name="prenom"
+                        placeholder="David" />
+                </div>
+                <div>
+                    <label for="le_mail">Votre mail</label>
+                    <input type="email" required id="le_mail" name="mail"
+                        placeholder="david.dupont@orange.fr" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Informations facultatives</legend>
+                <div>
+                    <label for="la_bio">Biographie</label>
+                    <textarea id="la_bio" name="bio"
+                        placeholder="Une courte présentation pour mieux vous connaître"
+                        rows="5" cols="80">
+                    </textarea>
+                </div>
+                <div>
+                    <div>Genre</div>
+                    <label for="homme">Homme</label>
+                    <input type="radio" id="homme" name="genre" value="h" />
+                    <label for="femme">Femme</label>
+                    <input type="radio" id="femme" name="genre" value="f" />
+                    <label for="autre">Autre</label>
+                    <input type="radio" id="autre" name="genre" value="a" checked />
+                </div>
+                <div>
+                    <label for="la_photo">Photo de profil</label>
+                    <input type="file" id="la_photo" name="photo"
+                        accept="image/jpg, image/jpeg, image/png" />
+                </div>
+            </fieldset>
+            <div>
+                <button type="reset">Annuler</button>
+                <button type="submit">Envoyer</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        &copy; 2021 Mon Restaurant
+        <nav>
+            <a href="mentions_legales.html" title="Mentions légales">
+                Mentions légales
+            </a>
+            <a href="confidentialite.html" title="Politique de confidentialité">
+                Politique de confidentialité
+            </a>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
