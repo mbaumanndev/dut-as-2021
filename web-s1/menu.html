@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Mon Restaurant</title>
+</head>
+<body>
+    <header>
+        <h1>Mon Restaurant</h1>
+        <nav>
+            <a href="index.html" title="Accueil">Accueil</a>
+            <a href="commande.html" title="Commande">Commande</a>
+            <a href="compte.html" title="Compte">Compte</a>
+        </nav>
+    </header>
+    <main>
+        <button type="button">Trier par nom</button>
+        <button type="button">Trier par ingrédient</button>
+        <ul>
+            <li>
+                <article>
+                    <h1>Pizza</h1>
+                    <img src="https://picsum.photos/seed/picsum/200/300"
+                        alt="Pizza : base tomate, origan, jambon"
+                        width="200" height="300" />
+                    <ul>
+                        <li>Prix : 13,99€</li>
+                        <li>Composition: base tomate, origan, jambon</li>
+                    </ul>
+                    <label for="quantite_pizza">Quantité</label>
+                    <input type="number" id="quantite_pizza" min="0" />
+                    <button type="button">Ajouter au panier</button>
+                </article>
+            </li>
+        </ul>
+    </main>
+    <aside>
+        <section>
+            <h2>Contacts</h2>
+            <ul>
+                <li>+33.6.66.77.88.99</li>
+                <li>26 rue du Labrador,<br />80000 Amiens</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Actualités</h2>
+            <article>
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet....</p>
+            </article>
+            <article>
+                <h1>Lorem ipsum</h1>
+                <p>Lorem ipsum dolor sit amet....</p>
+            </article>
+        </section>
+    </aside>
+    <footer>
+        &copy; 2021 Mon Restaurant
+        <nav>
+            <a href="mentions.html" title="Mentions légales">
+                Mentions légales
+            </a>
+            <a href="#" title="Politique de confidentialité">
+                Politique de confidentialité
+            </a>
+        </nav>
+    </footer>
+</body>
+</html>
