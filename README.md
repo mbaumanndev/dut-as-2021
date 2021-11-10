@@ -1,6 +1,6 @@
 # dut-as-2021
 
-Ce dépôt est à destination des étudiants de DUT en année spéciale, promo 2021-202, de l'IUT Informatique d'Amiens.
+Ce dépôt est à destination des étudiants de DUT en année spéciale, promo 2021-2022, de l'IUT Informatique d'Amiens.
 
 ## Resources
 
