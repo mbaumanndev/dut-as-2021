@@ -10,3 +10,4 @@ Ce dépôt est à destination des étudiants de DUT en année spéciale, promo 2
 - [Cours CSS](https://1drv.ms/p/s!AjuepZev1fSNmcxDrCiJIHcHFKk3wg?e=Ta8m9Y)
   - [Flexbox Froggy](http://flexboxfroggy.com/)
   - [Grid Garden](http://cssgridgarden.com/)
+- [WTF JavaScript)(https://www.youtube.com/watch?v=et8xNAc2ic8)
