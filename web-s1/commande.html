@@ -17,7 +17,7 @@
         <a href="a_propos.html" title="À propos">À propos</a>
     </nav>
     <main>
-        <form action="mailto:ma-pizzeria@amiens.fr"
+        <form id="form" action="mailto:ma-pizzeria@amiens.fr"
             enctype="text/plain" method="get">
             <fieldset>
                 <legend>Nous contacter</legend>
@@ -27,6 +27,7 @@
                         required
                         id="subject"
                         placeholder="Question sur les allergènes" />
+                        <span id="subjectError"></span>
                 </div>
                 <div>
                     <label for="copie">EMail en copie</label>
@@ -56,6 +57,6 @@
             </a>
         </nav>
     </footer>
-    
+    <script src="./scripts/commande.js"></script>
 </body>
 </html>
