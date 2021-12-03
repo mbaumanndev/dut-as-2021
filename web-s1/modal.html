@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/modal.css" />
 </head>
+
 <body>
     <button type="button" id="open-modal">Cliquer ici</button>
 
-    <!--
-    <div class="modal">
+    <div class="modal" id="modal" style="display: none;">
         <div class="modal-header">
-            <button type="button">&times;</button>
+            <button type="button" class="close">&times;</button>
         </div>
         <div class="modal-content">Contenu</div>
         <div class="modal-footer">
-            <button type="button">Annuler</button>
-            <button type="button">Confirmer</button>
+            <button type="button" class="cancel">Annuler</button>
+            <button type="button" class="confirm">Confirmer</button>
         </div>
     </div>
-    -->
+
+    <template id="modalTemplate">
+        <div class="modal">
+            <div class="modal-header">
+                <button type="button" class="close">&times;</button>
+            </div>
+            <div class="modal-content">Contenu</div>
+            <div class="modal-footer">
+                <button type="button" class="cancel">Annuler</button>
+                <button type="button" class="confirm">Confirmer</button>
+            </div>
+        </div>
+    </template>
 
     <script src="./scripts/modal.js"></script>
 </body>
+
 </html>
