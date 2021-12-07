@@ -17,7 +17,7 @@
         <a href="a_propos.html" title="À propos">À propos</a>
     </nav>
     <main>
-        <form id="form" action="mailto:ma-pizzeria@amiens.fr"
+        <form data-validate-form="true" id="form" action="mailto:ma-pizzeria@amiens.fr"
             enctype="text/plain" method="get">
             <fieldset>
                 <legend>Nous contacter</legend>
@@ -26,8 +26,14 @@
                     <input type="text" name="subject"
                         required
                         id="subject"
-                        placeholder="Question sur les allergènes" />
-                        <span id="subjectError"></span>
+                        placeholder="Question sur les allergènes"
+                        data-validate="true"
+                        data-min-length="3"
+                        data-min-length-error="Le sujet doit faire au minium 3 caractères"
+                        data-max-length="60"
+                        data-max-length-error="Le sujet doit faire au maximum 60 caractères"
+                        />
+                        <span data-error="subject" id="subjectError"></span>
                 </div>
                 <div>
                     <label for="copie">EMail en copie</label>
@@ -37,8 +43,11 @@
                 <div>
                     <label for="body">Contenu du mail</label>
                     <textarea required name="body"
+                        data-validate="true"
+                        data-min-length="20"
+                        data-min-length-error="Le sujet doit faire au minium 20 caractères"
                         placeholder="Ecrivez le corps du mail ici" id="body"></textarea>
-                        <span id="bodyError"></span>
+                        <span data-error="body" id="bodyError"></span>
                 </div>
                 <div>
                     <input type="reset" value="Annuler" />
@@ -58,6 +67,7 @@
             </a>
         </nav>
     </footer>
-    <script src="./scripts/commande.js"></script>
+    <!--<script src="./scripts/commande.js"></script>-->
+    <script src="./scripts/form-lib.js"></script>
 </body>
 </html>
