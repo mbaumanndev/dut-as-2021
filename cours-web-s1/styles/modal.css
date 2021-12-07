@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+}
+
+.modal {
+    width: 250px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    border: 1px solid black;
+    padding: 5px;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+}

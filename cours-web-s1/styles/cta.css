@@ -1,0 +1,25 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.cta {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 50px 200px 1fr 20px;
+}
+.cta__content, .cta__link {
+    order: 1
+}
+.cta__picture img { width: 300px; height: 200px; }
+@media screen and (min-width: 900px) {
+    .cta {
+        grid-template-columns: 600px 1fr;
+        grid-template-rows: 50px 1fr 20px;
+        min-height: 400px;
+        column-gap: 30px;
+    }
+    .cta__picture {
+        grid-column: 1 / 2;
+        grid-row: 1 / -1;
+    }
+    .cta__picture img { width: 600px; height: 400px; }
+}
