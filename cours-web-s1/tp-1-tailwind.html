@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Lune Des Pirates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="w-full p-[10px] flex flex-col md:flex-row md:justify-between md:items-center md:h-[80px]">
+        <div class="md:flex md:flex-row md:items-center space-x-2">
+            <a href="#" title="La Lune Des Pirates" class="block text-center md:inline-block">
+                <img src="./images/logo-lune.jpg" alt="Logo de La Lune Des Pirates" width="60" height="60" class="inline-block" />
+            </a>
+            <nav class="block text-center md:inline-block">
+                <a href="#" title="Accueil">Accueil</a> |
+                <a href="#" title="Programme">Programme</a> |
+                <a href="#" title="Billetterie">Billetterie</a> |
+                <a href="#" title="Contact">Contact</a>
+            </nav>
+        </div>
+        <div class="block text-center">
+            <a href="#" title="Français" hreflang="fr">FR</a> |
+            <a href="#" title="English" hreflang="en">EN</a>
+        </div>
+    </header>
+    <main class="flex flex-col">
+        <section class="relative">
+            <picture class="w-full h-auto max-h-full md:fit-cover md:h-full">
+                <source srcset="https://picsum.photos/seed/image1-2/1600/400" media="(min-width: 800px)" />
+                <img src="https://picsum.photos/seed/image1/320/180" alt="Image" class="w-full h-auto max-h-full md:fit-cover md:h-full" />
+            </picture>
+            <article class="p-[10px] md:absolute md:top-[20px] md:right-[20px] md:bottom-[20px] md:left-1/2 md:text-white md:font-semibold md:p-[15px] md:bg-black/80">
+                <h1>Lorem ipsum dolor sic amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget volutpat orci. Integer eget nibh
+                    dui. Vestibulum a nunc in lacus sodales suscipit. Nulla laoreet est sed nisl imperdiet varius.
+                    Phasellus a diam sit amet ex hendrerit consequat. Aliquam scelerisque lacus vitae diam tincidunt
+                    faucibus. Mauris nec magna et odio euismod sodales. Sed efficitur sodales arcu sed interdum. Nunc in
+                    vestibulum ante. Nullam a sem bibendum, suscipit magna sit amet, consectetur arcu. Quisque metus
+                    mauris, sodales viverra faucibus vel, consequat a felis.</p>
+            </article>
+        </section>
+        <section class="md:flex md:flex-row-reverse md:flex-[0_0_50%]">
+            <figure class="grid m-0 p-0 grid-cols-2 grid-rows-3 md:min-w-[50%]">
+                <picture class="w-full h-auto max-h-full fit-cover h-full row-span-3">
+                    <source srcset="https://picsum.photos/seed/image2-2/600/900" media="(min-width: 800px)" />
+                    <img src="https://picsum.photos/seed/image2/180/330" alt="Image" width="180" height="330" class="w-full h-auto max-h-full fit-cover h-full" />
+                </picture>
+                <picture class="w-full h-auto max-h-full fit-cover h-full">
+                    <source srcset="https://picsum.photos/seed/image3-2/800/400" media="(min-width: 800px)" />
+                    <img src="https://picsum.photos/seed/image3/320/190" alt="Image" width="320" height="190" class="w-full h-auto max-h-full fit-cover h-full" />
+                </picture>
+                <picture class="w-full h-auto max-h-full fit-cover h-full">
+                    <source srcset="https://picsum.photos/seed/image4-2/800/400" media="(min-width: 800px)" />
+                    <img src="https://picsum.photos/seed/image4/320/190" alt="Image" width="320" height="190" class="w-full h-auto max-h-full fit-cover h-full" />
+                </picture>
+                <picture class="w-full h-auto max-h-full fit-cover h-full">
+                    <source srcset="https://picsum.photos/seed/image5-2/800/400" media="(min-width: 800px)" />
+                    <img src="https://picsum.photos/seed/image5/320/190" alt="Image" width="320" height="190" class="w-full h-auto max-h-full fit-cover h-full" />
+                </picture>
+            </figure>
+            <article class="p-[10px] flex flex-col">
+                <h1>Lorem ipsum dolor sic amet</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget volutpat orci. Integer eget nibh
+                    dui. Vestibulum a nunc in lacus sodales suscipit. Nulla laoreet est sed nisl imperdiet varius.
+                    Phasellus a diam sit amet ex hendrerit consequat. Aliquam scelerisque lacus vitae diam tincidunt
+                    faucibus. Mauris nec magna et odio euismod sodales. Sed efficitur sodales arcu sed interdum. Nunc in
+                    vestibulum ante. Nullam a sem bibendum, suscipit magna sit amet, consectetur arcu. Quisque metus
+                    mauris, sodales viverra faucibus vel, consequat a felis.</p>
+                <a href="#" title="En savoir plus" class="block px-[12px] py-[7px] bg-black text-white font-semibold decoration-none self-end mr-[20px]">En savoir plus</a>
+            </article>
+        </section>
+    </main>
+    <footer class="px-[20px] pt-[20px] pb-[50px] mt-[40px] bg-black text-white md:mt-0">
+        <div class="md:max-w-[900px] md:w-full md:m-auto md:flex md:flex-row md:justify-between">
+            <div>
+                <img class="block m-auto md:mt-[20px]" src="https://picsum.photos/seed/image6/160/90" alt="Image" width="160"
+                    height="90" />
+            </div>
+            <section class="grid gap-4 grid-cols-2 grid-rows-3 justify-center md:w-[600px] md:grid-cols-3 md:grid-rows-2">
+                <div>
+                    <h3>Titre de rubrique</h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3>Titre de rubrique</h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3>Titre de rubrique</h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3>Titre de rubrique</h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3>Titre de rubrique</h3>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                            <li>
+                                <a href="#" title="Lien">Lien</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </section>
+        </div>
+        <div class="md:max-w-[900px] md:w-full md:m-auto md:pt-[20px] md:text-center">
+            <span class="block text-center md:inline">
+                &copy; 2021 - La Lune Des Pirates
+            </span>
+            <span class="block text-center md:inline">
+                <a href="#" title="Mentions légales">Mentions mégales</a> - <a href="#"
+                    title="Politique de confidentialité">Politique de confidentialité</a>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>
