@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Iut.Demo.Web.Models;
 
 namespace Iut.Demo.Web.Data
 {
@@ -9,5 +10,6 @@ namespace Iut.Demo.Web.Data
             : base(options)
         {
         }
+        public DbSet<Iut.Demo.Web.Models.Movie> Movie { get; set; }
     }
 }
