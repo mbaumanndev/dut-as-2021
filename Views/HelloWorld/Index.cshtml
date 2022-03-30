@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Hello World";
+}
+
+<h2>Index</h2>
+
+@for (int i = 0; i < (int)ViewData["Count"]!; i++)
+{
+    <p>@ViewData["Hello"]</p>   
+}
