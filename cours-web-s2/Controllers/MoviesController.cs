@@ -21,16 +21,30 @@ namespace Iut.Demo.Web.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string searchString, string movieGenre)
         {
             var movies = _context.Movie.AsQueryable();
+            var genres = _context.Movie.Select(m => m.Genre).Distinct();
 
             if (!String.IsNullOrWhiteSpace(searchString))
             {
                 movies = movies.Where(m => m.Title!.Contains(searchString));
             }
 
-            return View(await movies.ToListAsync());
+            if (!String.IsNullOrWhiteSpace(movieGenre))
+            {
+                movies = movies.Where(m => m.Genre == movieGenre);
+            }
+
+            MovieGenreViewModel viewModel = new MovieGenreViewModel
+            {
+                Genres = new SelectList(await genres.ToListAsync()),
+                Movies = await movies.ToListAsync(),
+                MovieGenre = movieGenre,
+                SearchString = searchString,
+            };
+
+            return View(viewModel);
         }
 
         // GET: Movies/Details/5
@@ -62,7 +76,7 @@ namespace Iut.Demo.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +108,7 @@ namespace Iut.Demo.Web.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (id != movie.Id)
             {
