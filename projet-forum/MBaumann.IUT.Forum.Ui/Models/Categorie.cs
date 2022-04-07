@@ -22,12 +22,12 @@ namespace MBaumann.IUT.Forum.Ui.Models
 
         [DataType(DataType.Date)]
         [Required]
-        public DateTime Creation { get; set; }
+        public DateTime Creation { get; set; } = DateTime.UtcNow;
 
         [DataType(DataType.Date)]
         [Required]
-        public DateTime Modification { get; set; }
+        public DateTime Modification { get; set; } = DateTime.UtcNow;
 
-        public ICollection<Topic> Topics { get; set; }
+        public ICollection<Topic> Topics { get; set; } = new List<Topic>();
     }
 }
