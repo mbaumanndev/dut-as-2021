@@ -48,7 +48,7 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 // Chaque utilisateur peut avoir plusieurs messages
                 b.HasMany(e => e.Messages)
-                    .WithOne()
+                    .WithOne(u => u.Utilisateur)
                     .HasForeignKey(m => m.UtilisateurId)
                     .IsRequired();
             });
@@ -77,6 +77,88 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 b.Property(e => e.Supression)
                     .HasDefaultValue(false);
+
+                b.Property(e => e.Creation)
+                    .ValueGeneratedOnAdd()
+                    .IsRequired();
+
+                b.Property(e => e.Modification)
+                    .IsRequired()
+                    .ValueGeneratedOnAddOrUpdate()
+                    .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+            });
+
+            builder.Entity<Sujet>(b => {
+                b.HasKey(b => b.Id);
+
+                b.HasOne(e => e.Topic)
+                    .WithMany(t => t.Sujets)
+                    .HasForeignKey(s => s.TopicId)
+                    .IsRequired();
+
+                b.Property(e => e.Nom)
+                    .HasMaxLength(255)
+                    .IsRequired();
+
+                b.Property(e => e.Suppression);
+
+                b.Property(e => e.Creation)
+                    .ValueGeneratedOnAdd()
+                    .IsRequired();
+
+                b.Property(e => e.Modification)
+                    .IsRequired()
+                    .ValueGeneratedOnAddOrUpdate()
+                    .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+            });
+
+            builder.Entity<Topic>(b =>
+            {
+                b.HasKey(b => b.Id);
+
+                b.HasOne(e => e.Categorie)
+                    .WithMany(c => c.Topics)
+                    .HasForeignKey(t => t.CategorieId)
+                    .IsRequired();
+
+                b.Property(e => e.Nom)
+                    .HasMaxLength(255)
+                    .IsRequired();
+
+                b.Property(e => e.Description)
+                    .HasMaxLength(2000);
+
+                b.Property(e => e.Cle)
+                    .IsRequired();
+
+                b.Property(e => e.Ordre)
+                    .IsRequired();
+
+                b.Property(e => e.Creation)
+                    .ValueGeneratedOnAdd()
+                    .IsRequired();
+
+                b.Property(e => e.Modification)
+                    .IsRequired()
+                    .ValueGeneratedOnAddOrUpdate()
+                    .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
+            });
+
+            builder.Entity<Categorie>(b => {
+                b.HasKey(e => e.Id);
+
+                b.Property(e => e.Nom)
+                    .HasMaxLength(255)
+                    .IsRequired();
+
+                b.Property(e => e.Description)
+                    .HasMaxLength(2000);
+
+                b.Property(e => e.Cle)
+                    .IsRequired();
+
+                b.Property(e => e.Ordre)
+                    .IsRequired();
 
                 b.Property(e => e.Creation)
                     .ValueGeneratedOnAdd()
