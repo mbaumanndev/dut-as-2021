@@ -80,10 +80,12 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 b.Property(e => e.Creation)
                     .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .IsRequired();
 
                 b.Property(e => e.Modification)
                     .IsRequired()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .ValueGeneratedOnAddOrUpdate()
                     .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
             });
@@ -104,11 +106,13 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 b.Property(e => e.Creation)
                     .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .IsRequired();
 
                 b.Property(e => e.Modification)
                     .IsRequired()
                     .ValueGeneratedOnAddOrUpdate()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
             });
 
@@ -136,11 +140,13 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 b.Property(e => e.Creation)
                     .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .IsRequired();
 
                 b.Property(e => e.Modification)
                     .IsRequired()
                     .ValueGeneratedOnAddOrUpdate()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
             });
 
@@ -162,13 +168,23 @@ namespace MBaumann.IUT.Forum.Ui.Data
 
                 b.Property(e => e.Creation)
                     .ValueGeneratedOnAdd()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .IsRequired();
 
                 b.Property(e => e.Modification)
                     .IsRequired()
                     .ValueGeneratedOnAddOrUpdate()
+                    .HasDefaultValueSql("GETUTCDATE()")
                     .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Save);
             });
         }
+
+        public DbSet<MBaumann.IUT.Forum.Ui.Models.Categorie> Categorie { get; set; }
+
+        public DbSet<MBaumann.IUT.Forum.Ui.Models.Topic> Topic { get; set; }
+
+        public DbSet<MBaumann.IUT.Forum.Ui.Models.Sujet> Sujet { get; set; }
+
+        public DbSet<Message> Message { get; set; }
     }
 }
