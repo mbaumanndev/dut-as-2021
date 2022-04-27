@@ -1,0 +1,13 @@
+﻿@model Categorie
+
+<table>
+    <tr>
+        <td>@Html.DisplayFor(m => m.Nom)</td>
+    </tr>
+    @foreach (var topic in Model.Topics)
+    {
+        <tr>
+            <td>@topic.Nom</td>
+        </tr>
+    }
+</table>
