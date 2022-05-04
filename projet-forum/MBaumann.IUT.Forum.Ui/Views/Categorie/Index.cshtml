@@ -6,20 +6,15 @@
 
 <table class="table">
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                <a asp-controller="Categorie" asp-action="Afficher" asp-route-cle="@item.Cle">
-                    @Html.DisplayFor(modelItem => item.Nom)
-                </a>
-            </td>
-        </tr>
-            @foreach (var topic in item.Topics)
-            {
-                <tr>
-                    <td>@topic.Nom</td>
-                </tr>
-            }
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    <a asp-controller="Categorie" asp-action="Afficher" asp-route-cle="@item.Cle">
+                        @Html.DisplayFor(modelItem => item.Nom)
+                    </a>
+                </td>
+            </tr>
+            <partial name="_TopicListPartial" model="item" />
         }
     </tbody>
 </table>

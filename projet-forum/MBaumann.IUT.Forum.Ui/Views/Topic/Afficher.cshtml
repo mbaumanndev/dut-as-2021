@@ -1,0 +1,16 @@
+﻿@model TopicViewModel
+
+<h1>@Model.Topic.Categorie.Nom - @Model.Topic.Nom</h1>
+
+@if (Model.Sujets.Count == 0) {
+    <p>Pas de sujets</p>
+} else {
+    <table>
+        @foreach (var sujet in Model.Sujets)
+        {
+            <tr>
+                <td>@sujet.Nom</td>
+            </tr>
+        }
+    </table>
+}

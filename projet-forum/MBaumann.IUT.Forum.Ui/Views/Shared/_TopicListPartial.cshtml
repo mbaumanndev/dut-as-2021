@@ -1,0 +1,17 @@
+﻿@model Categorie
+
+@foreach (var topic in Model.Topics)
+{
+    <tr>
+        <td>
+            <a
+                asp-controller="Topic"
+                asp-action="Afficher"
+                asp-route-cleCat="@Model.Cle"
+                asp-route-cleTop="@topic.Cle"
+            >
+                @topic.Nom
+            </a>
+        </td>
+    </tr>
+}

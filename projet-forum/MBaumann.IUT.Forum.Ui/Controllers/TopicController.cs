@@ -27,6 +27,53 @@ namespace MBaumann.IUT.Forum.Ui.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        [Route("categorie/{cleCat}/{cleTop}")]
+        public async Task<IActionResult> Afficher(
+            string cleCat,
+            string cleTop,
+            int page = 1,
+            int itemsPerPage = 20)
+        {
+            if (String.IsNullOrWhiteSpace(cleCat)
+                || String.IsNullOrWhiteSpace(cleTop))
+                return NotFound();
+
+            if (page < 1) page = 1;
+            if (itemsPerPage < 10) itemsPerPage = 10;
+
+            var topic = await _context.Topic
+                .Include(t => t.Categorie)
+                .FirstOrDefaultAsync(t =>
+                    t.Cle == cleTop
+                    && t.Categorie.Cle == cleCat
+                );
+
+            if (topic == null)
+                return NotFound();
+
+            var baseQuery = _context.Sujet.Where(
+                s => s.TopicId == topic.Id
+             );
+
+            var totalPages = Math.Ceiling(baseQuery.Count() / (double)itemsPerPage);
+
+            if (page > totalPages)
+                return NotFound();
+
+            var sujets = baseQuery
+                .OrderBy(s => s.Id)
+                .Skip((page -1) * itemsPerPage)
+                .Take(itemsPerPage);
+
+            var model = new TopicViewModel
+            {
+                Topic = topic,
+                Sujets = sujets.ToList(),
+            };
+
+            return View(model);
+        }
+
         // GET: Topic/Details/5
         public async Task<IActionResult> Details(int? id)
         {
