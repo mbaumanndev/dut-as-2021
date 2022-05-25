@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if (Model.Salles.Count() > 0)
+{
+    <ul>
+        @foreach (var salle in Model.Salles) {
+            <li>@salle.Nom</li>
+        }
+    </ul>
+} else {
+    <p>Pas de salles</p>
+}
